@@ -146,7 +146,7 @@ array.splice(2,3);
 // borramos 3 elementos a partir del 2, por lo que desaparecerían los elementos 2, 3 y 4.
 ```
 
-## Funciones comunes
+## Funciones comunes (PENDIENTE DE RELLENAR)
 
 ### String:
 
@@ -203,4 +203,4 @@ EjercicioPalindromo: Pide una cadena por teclado e indica si es un palíndromo.
 - [x] DNI
 - [x] Mayúsculas
 - [x] Par/Impar
-- [ ] Palíndromo
+- [x] Palíndromo
