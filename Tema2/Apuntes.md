@@ -98,7 +98,7 @@ Como siempre.
 
 ### Objetos Date
 
-```var day = new Date().getDay```
+```var day = new Date().getDay()```
 
 ### Cambiar texto en un párrafo
 
@@ -198,3 +198,9 @@ EjercicioParimpar: Pide un número por teclado e indica si es par o impar.
 EjercicioMayusculas: Pide una cadena por teclado e indica si está formada por mayúsculas, minúsculas o ambas.
 EjercicioPalindromo: Pide una cadena por teclado e indica si es un palíndromo.
 ```
+
+- [x] Días
+- [x] DNI
+- [x] Mayúsculas
+- [ ] Par/Impar
+- [ ] Palíndromo
