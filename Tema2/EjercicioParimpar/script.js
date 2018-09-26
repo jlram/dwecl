@@ -3,12 +3,24 @@
  */
 (function() {
 
-    var numero = prompt("Por favor, introduce un número.");
-    
-    if(numero%2 != 0) {
-        alert("El número es impar");
-    } else {
-        alert("El número es par");
+    var button = document.getElementById("button");
+    var paragraph = document.getElementById("paragraph");
+
+    button.onclick = comprobar;
+
+    function comprobar() {
+        var numero = document.getElementById("numero").value;
+        var texto = "";
+
+        if(isNaN(numero)) {
+            texto = "Por favor, introduce un número";        
+        } else if(numero%2 != 0) {
+            texto = "El número es impar";
+        } else {
+            texto = "El número es par";
+        }
+
+        paragraph.textContent = texto;
     }
 
 })();

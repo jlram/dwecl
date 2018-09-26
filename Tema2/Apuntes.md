@@ -202,5 +202,5 @@ EjercicioPalindromo: Pide una cadena por teclado e indica si es un palíndromo.
 - [x] Días
 - [x] DNI
 - [x] Mayúsculas
-- [ ] Par/Impar
+- [x] Par/Impar
 - [ ] Palíndromo
