@@ -23,12 +23,12 @@
             esNumero = true;
         }
 
-        if (esNumero === true) {
-            texto = "Introduce una cadena sin números";
+        if (cadenaoriginal.trim() == "") {
+            texto = "La cadena está vacía";  
+        } else if (esNumero === true) {
+            texto = "La cadena está compuesta por números";
         } else {
-            if (cadenaoriginal.trim() == "") {
-                texto = "La cadena está vacía";
-            } else if (cadenaoriginal == cadenamayus) {
+            if (cadenaoriginal == cadenamayus) {
                 texto = "La cadena está compuesta solo por mayúsculas";
             } else if (cadenaoriginal == cadenaminus) {
                 texto = "La cadena está compuesta solo por minúsculas";
