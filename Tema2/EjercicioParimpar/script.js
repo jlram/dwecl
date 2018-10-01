@@ -6,7 +6,7 @@
     var button = document.getElementById("button");
     var paragraph = document.getElementById("paragraph");
 
-    button.onclick = comprobar;
+    button.addEventListener("click", comprobar); /*Manera más actual*/
 
     function comprobar() {
         var numero = document.getElementById("numero").value;

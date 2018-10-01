@@ -1,31 +1,17 @@
-/**
- * Pide una cadena por teclado e indica si está formada por 
- * mayúsculas, minúsculas o ambas.
- */
 (function() {
     var button = document.getElementById("button");
-    var paragraph = document.getElementById("paragraph");
     
     var texto;
-    /**
-     * Manera de conseguir que podamos copiar y pegar la funcion comprobar()
-     * y usarla en otros sitios.
-     * 
-     * Hacemos una funcion que llame a comprobrar():
-     * - Metemos un parametro que es igual al valor del campo de texto
-     * - Al parrafo le asignamos el texto de lo que devuelva la funcion comprobar()
-     */
+
     button.addEventListener("click", function() {
-        paragraph.textContent = comprobar(document.getElementById("cadena").value);
+        for (let i = 0; i < 3; i++) {
+            var paragraph = document.getElementById("resul" + (i+1));
+            console.log("resul" + (i+1));
+            paragraph.textContent = comprobar(document.getElementById("input" + (i+1)).value);
+        }
+        
     });
 
-    /**
-     * Coge una cadena, la pasa a minuscula y mayuscula y compara
-     * para saber si cadenaoriginal está compuesta de mayusculas, 
-     * minusculas o ambas.
-     * @param cadenaoriginal 
-     * @returns texto
-     */
     function comprobar(cadenaoriginal) {
 
         var esNumero = false;
