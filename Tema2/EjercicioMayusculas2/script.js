@@ -6,7 +6,6 @@
     button.addEventListener("click", function() {
         for (let i = 0; i < 3; i++) {
             var paragraph = document.getElementById("resul" + (i+1));
-            console.log("resul" + (i+1));
             paragraph.textContent = comprobar(document.getElementById("input" + (i+1)).value);
         }
         
