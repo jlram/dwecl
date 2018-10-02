@@ -10,46 +10,67 @@
     var button2 = document.getElementById("button2");
     var demo = document.getElementById("demo");
 
-    button.onclick = dia;     
-    button2.onclick = finde;
-
+    //Agregamos los eventos
+    button.addEventListener("click", dia2);
+    button2.addEventListener("click", finde);  
+    
     var texto;
     
+    var opciones = "Domingo,Lunes,Martes,Miércoles,Jueves,Viernes,Sábado".split(",");
+
     /**
      * Esta función se lanzará al pulsar el primer botón
      * de nuestra web. Obtendrá el día de la semana y 
      * se mostrará en pantalla.
      */
-    function dia() {
+    // function dia() {
+        
+    //     // Genera un número en función del día que sea
+    //     var day = new Date().getDay();
+
+    //     switch (day) {
+    //         case 0:
+    //             texto = "Hoy es Domingo";       
+    //             break;
+    //         case 1:
+    //             texto = "Hoy es Lunes"; 
+    //             break;
+    //         case 2:
+    //             texto = "Hoy es Martes";    
+    //             break;           
+    //         case 3:
+    //             texto = "Hoy es Miércoles";
+    //             break;
+    //         case 4:
+    //             texto = "Hoy es Jueves"; 
+    //             break;
+    //         case 5:
+    //             texto = "Hoy es Viernes"; 
+    //             break;
+    //         case 6:
+    //             texto = "Hoy es Sábado"; 
+    //             break;
+    //         default:
+    //             texto = "Ha ocurrido un error"; 
+    //             break;
+    //     }
+    //     // Muestra el contenido de texto en el HTML
+    //     demo.textContent = texto;
+    // }
+
+    /**
+     * Otra forma de realizar la comprobación de los días sin tener que 
+     * utilizar un switch
+     */
+    function dia2() {
         
         // Genera un número en función del día que sea
         var day = new Date().getDay();
 
-        switch (day) {
-            case 0:
-                texto = "Hoy es Domingo";       
-                break;
-            case 1:
-                texto = "Hoy es Lunes"; 
-                break;
-            case 2:
-                texto = "Hoy es Martes";    
-                break;           
-            case 3:
-                texto = "Hoy es Miércoles";
-                break;
-            case 4:
-                texto = "Hoy es Jueves"; 
-                break;
-            case 5:
-                texto = "Hoy es Viernes"; 
-                break;
-            case 6:
-                texto = "Hoy es Sábado"; 
-                break;
-            default:
-                texto = "Ha ocurrido un error"; 
-                break;
+        if (day >= 0 && day < 7){
+            texto = "Hoy es " + opciones[day];
+        }else{
+            texto =  "Ha ocurrido un error";
         }
         // Muestra el contenido de texto en el HTML
         demo.textContent = texto;
