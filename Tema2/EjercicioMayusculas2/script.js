@@ -3,6 +3,12 @@
     
     var texto;
 
+    /**
+     * Recoge todos los campos de entrada y se procesan para ver si 
+     * la cadena introducida por el usuario está compuesta por mayúsculas, 
+     * minúsculas, vacía o por sólamente números.
+     * Depende del resultado lo mostramos en un span para dar un feddback al usuario.
+     */
     button.addEventListener("click", function() {
         for (let i = 0; i < 3; i++) {
             var paragraph = document.getElementById("resul" + (i+1));

@@ -27,7 +27,9 @@
 
         var palindromo = true;
 
-        for (let i = 0; i < cadenaseparada.length; i++) {
+        //Ciclo para comprobar caracter a caracter si  counciden las dos cadenas introducidas
+        //dándole la vuelta para ver si son un palíndromo
+        for (let i = 0; i < cadenaseparada.length && !palindromo; i++) {
             console.log(cadenaseparada[i], cadenareves[i]);
             if(cadenaseparada[i] != cadenareves[i]) {
                 palindromo = false;
