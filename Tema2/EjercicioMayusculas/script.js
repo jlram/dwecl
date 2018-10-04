@@ -33,6 +33,7 @@
         var cadenamayus = cadenaoriginal.toUpperCase();
         var cadenaminus = cadenaoriginal.toLowerCase();
 
+        //Ten cuidado con isNaN, puede darte error en las cadenas vacías
         if (!isNaN(cadenaoriginal)) {
             esNumero = true;
         }
