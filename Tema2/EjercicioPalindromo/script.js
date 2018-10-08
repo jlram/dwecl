@@ -17,19 +17,17 @@
      * - cadenareves, que hace uso del metodo reverse para dar la vuelta a cadenaseparada
      *   y join para volver a crear un string.
      * 
-     * Una vez hecho esto, con un bucle for comprobaremos si cada uno de los elementos de
-     * cadenaseparada y cadenareves son iguales. En caso de serlo, estamos ante un palindromo. 
+     * Una vez hecho esto, comprobaremos si cadenasinespacios y cadenareves son iguales.
+     *  En caso de serlo, estamos ante un palindromo. 
      */
     function comprobar(cadenaoriginal) {
+  
+        var cadenasinespacios = cadenaoriginal.toLowerCase().replace(/\s/g,'');
+        var cadenareves = cadenasinespacios.split("").reverse().join("");
 
-        var texto = "La frase " + cadenaoriginal + " no es un palíndromo.";
-        
-        cadenasinespacios = cadenaoriginal.replace(/\s/g,'');
-        var cadenareves = cadenasinespacios.split("").slice().reverse().join("");
-
-        if (cadenasinespacios == cadenareves) {
-            var texto = "La frase " + cadenaoriginal + " es un palíndromo.";
-        }
+        var texto = cadenasinespacios == cadenareves ? 
+        "La frase " + cadenaoriginal + " es un palíndromo." :
+        "La frase " + cadenaoriginal + " no es un palíndromo.";
 
         return texto;
     }
