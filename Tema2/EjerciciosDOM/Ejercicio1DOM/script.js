@@ -26,10 +26,6 @@
 
     var parrafos = document.getElementsByTagName("p");
     
-    if (parrafos.length > 2){
-        parrafo.innerHTML += "Enlaces del tercer párrafo: " + parrafos[2].getElementsByTagName("a").length + "<br>";
-    }
+    parrafo.innerHTML += "Enlaces del tercer párrafo: " + parrafos[2].getElementsByTagName("a").length + "<br>";
     
-
 })();
-
