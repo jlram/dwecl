@@ -20,7 +20,8 @@
             var nodos = lista.childNodes;
             for (const item of nodos) {
                 if(item.tagName == "LI") {
-                    if (item.firstChild.textContent != textoBusca.value) {
+                    item.style.display = "list-item"; /*Primero lo muestra para que se pueda buscar de nuevo sin necesidad de limpiar*/
+                    if (!item.firstChild.textContent.includes(textoBusca.value)) {
                         item.style.display = "none";
                     }
                 }
@@ -49,7 +50,7 @@
         } else{
             var existe = false;
             for (let item of canciones){
-                if (item.textContent=== input.value){
+                if (item.firstChild.textContent === input.value) {
                     var existe = true;
                 }
             }
@@ -58,6 +59,7 @@
                alert("Esa canción ya existe");     
             } else {
                 añadeCancion(input.value, lista);
+                sortList();
             }  
         }
     });
@@ -76,4 +78,11 @@
             e.target.parentNode.remove();
         }
     }); 
+
+    function sortList() {
+        Array.from(lista.getElementsByTagName("LI"))
+          .sort((a, b) => a.textContent.localeCompare(b.textContent))
+          .forEach(li => lista.appendChild(li));
+    }
+
 })();
