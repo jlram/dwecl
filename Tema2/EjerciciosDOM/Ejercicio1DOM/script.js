@@ -6,3 +6,26 @@
 * 3. Numero de enlaces que enlazan a http://prueba
 * 4. Número de enlaces del tercer párrafo
 */
+
+(function () {
+
+    var contenedor = document.getElementById("enlaces");
+    var apartado1 = document.getElementById("apartado1");
+    var apartado2 = document.getElementById("apartado2");
+
+    cuentaEnlaces();
+    penultimoEnlace();
+
+    function cuentaEnlaces() {
+        var hijos = contenedor.children;
+        apartado1.textContent = "Hay " + hijos.length + " enlaces.";
+    }
+
+    function penultimoEnlace() {
+        var enlace = contenedor.lastChild.previousSibling.getAttribute("href");
+        apartado2.textContent = "El penúltimo enlace es " + enlace;
+    }
+
+
+
+})();
