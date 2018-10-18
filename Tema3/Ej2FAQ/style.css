@@ -1,0 +1,22 @@
+h1 {
+    padding-left: 40px;
+    font-size: 2.4em;
+    background-image: url('./mas.jpg');
+    background-position: center left;
+    background-repeat: no-repeat;
+}
+
+.oculto {
+    display: none;
+}
+
+#imagen {
+    position: absolute;
+    top: 150px;
+    right: 500px;
+
+    width: 500px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
