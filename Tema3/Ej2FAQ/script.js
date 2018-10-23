@@ -23,7 +23,6 @@
 
                 break;
             case 'LI':
-
                 imagen.classList.remove("oculto");
                 
                 /**
