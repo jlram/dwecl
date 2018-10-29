@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Formulario enviado</h1>
 </body>
 </html>

@@ -4,22 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ejercicio 1 Formularios</title>
+    <title>Formulario</title>
+    <script src="./script.js" defer></script>
 </head>
 <body>
-    
-    <form action="form.php">
-        <input type="text" name="name" id="nombre" placeholder="Introduce tu nombre..."> <br><br>
-        <input type="password" name="password" id="password" placeholder="Introduce tu contraseña..."><br><br>
-        <input type="password" name="password2" id="password2" placeholder="Repite tu contraseña..."><br><br>
-        <input type="email" name="email" id="email"><br><br>
-
-        <input type="radio" name="gender" value="Hombre">Hombre<br><br>
-        <input type="radio" name="gender" value="Mujer">Mujer<br><br>
-        <input type="radio" name="gender" value="Otro">Otro<br><br>
-
-        <input type="text">
-    </form>
-
+    <div class="container">
+        <form action="index2.php" method="POST" enctype="multipart/form-data" id="form">
+            <h2>Fromulario de registro</h1>
+            <input type="text" name="nombre" id="nombre" placeholder="Introduzca nombre" autofocus><br>
+            <input type="password" name="pswd" id="pswd" placeholder="Introduzca contraseña" ><br>
+            <input type="password" name="rpswd" id="rpswd" placeholder="Repita contraseña" ><br>
+            <input type="email" name="email" id="email" placeholder="Introduzca email">
+            <div class="sexo">
+                <label class="sexo" for="genero">Sexo</label>
+                <input type="radio" name="genero" value="masculino" >Masculino<br>
+                <input type="radio" name="genero" value="femenino" >Femenino<br>
+            </div>
+            <label for="nacimiento">Fecha de Nacimiento</label>
+            <input type="date" name="nacimiento" id="nacimiento"><br>
+            <input type="text" name="ciudad" id="ciudad" placeholder="Introduzca nombre de ciudad"><br>
+            <input type="file" name="foto" id="foto" >
+            <div><label for="verify" id='label'>Realice la siguiente cuenta matemática </label></div>
+            <input type="number" name="verify" id="verify" placeholder="Introduce resultado de la operación" >
+            <br><input type="checkbox" name="condiciones" id="condiciones">Acepto las condiciones
+            <div class="btn">
+                <input type="submit" value="Crear cuenta" disabled>
+                <input type="reset">
+            </div>
+        </form>
+    </div>
 </body>
 </html>
