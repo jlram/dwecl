@@ -35,6 +35,8 @@ opción no se verifique no se habilitará el botón de envío.
 
     function checkForm(event) {
         event.preventDefault();
+
+        asdfsadf
         var nombre = document.getElementById('nombre');
         var passwd = document.getElementById('pswd');
         var inputOp = document.getElementById('verify');
