@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Formulario 2</title>
 </head>
 <body>
+
+    <label class="contador">Contador: 00:00</label>
+
     <div class="container">
         <form action="">
             <div class="form-group" >
@@ -78,9 +81,9 @@
                 </div>
 
                 <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Late
-                        </label>
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optradio">Late
+                    </label>
                 </div>
             </div>
 
@@ -89,20 +92,20 @@
         
                     <div class="form-check" id="check">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Un lenguaje de programación orientado a objetos basado en JavaScript
+                            <input type="radio" name="p8" value="1" class="form-check-input" name="optradio">Un lenguaje de programación orientado a objetos basado en JavaScript
                         </label>
                     </div>
 
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Un servidor de aplicaciones basado en JavaScript
+                            <input type="radio" name="p8" value="2" class="form-check-input" name="optradio">Un servidor de aplicaciones basado en JavaScript
                         </label>
                     </div>
 
                     <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optradio">Un formato ligero para el intercambio de datos empleado en JavaScript
-                            </label>
+                        <label class="form-check-label">
+                            <input type="radio" name="p8" value="3" class="form-check-input" name="optradio">Un formato ligero para el intercambio de datos empleado en JavaScript
+                        </label>
                     </div>
                 </div>
 
@@ -111,36 +114,36 @@
             
                         <div class="form-check" id="check">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optradio">console.append();
+                                <input type="radio" name="p9" value="1" class="form-check-input" name="optradio">console.append();
                             </label>
                         </div>
 
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optradio">console.print();
+                                <input type="radio" name="p9" value="2" class="form-check-input" name="optradio">console.print();
                             </label>
                         </div>
 
                         <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">console.log();
+                                    <input type="radio" name="p9" value="3" class="form-check-input" name="optradio">console.log();
                                 </label>
                         </div>
 
                         <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">System.out.println();
+                                    <input type="radio" name="p9" value="4" class="form-check-input" name="optradio">System.out.println();
                                 </label>
                         </div>
                 </div>
 
                 <div class="form-group">
                         <label for="comment"><b>10.</b> ¿Qué te ha parecido este test? Justifica tu respuesta</label>
-                        <textarea class="form-control" rows="5" id="comment" placeholder="Función Main vacía"></textarea>
+                        <textarea class="form-control" rows="5" id="comment" placeholder="Función Main vacía" id="p10"></textarea>
                 </div>
             
-            <input type="submit" value="Enviar" class="btn">
-            <input type="reset" value="Borrar campos" class="btn">
+            <input type="submit" value="Enviar" class="btn" id="botonEnviar">
+            <input type="reset" value="Borrar campos" class="btn" id="botonEnviar">
             <br>
             <br>
         </form>

@@ -1,5 +1,5 @@
-#wrapper {
-    width: 70%;
-    height: 100%;
-    margin: 0 auto;
+.contador {
+    position: fixed;
+    top: 50px;
+    left: 50px;
 }

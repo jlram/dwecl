@@ -15,4 +15,8 @@ Realiza una una página web que presente un test de preguntas sobre el lenguaje 
 */
 (function (){
 
+    var button = document.getElementById();
+
+    button.addEventListener("click", funcion);
+
 })();
