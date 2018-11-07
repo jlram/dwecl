@@ -15,8 +15,54 @@ Realiza una una página web que presente un test de preguntas sobre el lenguaje 
 */
 (function (){
 
-    var button = document.getElementById();
+    var respuestas = new Array("", "1985", "Brendan Eich", "fatal", "3", "2", "","",  "1", "3", "3");
 
-    button.addEventListener("click", funcion);
+    console.log(respuestas);
+    var correcto = true;
+    var contadorFallos = 0;
+
+    var form = document.getElementById("form");
+    var contador = document.getElementById("contador");
+
+    var tiempoInicio = new Date().getTime();
+
+    var x = setInterval(function (){
+        var now = new Date().getTime();
+        
+        var distance = now - tiempoInicio;
+
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        if(minutes < 10) {
+            minutes = "0" + minutes;
+        }
+
+        if (seconds < 10) {
+            seconds = "0"  + seconds;
+        }
+
+        contador.textContent = "Contador: " + minutes + ":" + seconds;
+
+    }, 1000);
+    
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        for (let i = 1; i < respuestas.length; i++) {
+            var pregunta = document.getElementsByName("p" + i);
+            if(pregunta[0].value !== respuestas[i]) {
+                correcto = false;
+                console.log("la pregunta " + i + "está mal");
+                contadorFallos++;
+            }
+            
+            // console.log(pregunta);
+        }
+
+        alert("Errores: " + contadorFallos);
+        contadorFallos = 0;
+    });
 
 })();
