@@ -15,13 +15,15 @@ Realiza una una página web que presente un test de preguntas sobre el lenguaje 
 */
 (function (){
 
-    var respuestas = new Array("", "1985", "Brendan Eich", "fatal", "3", "2", "","",  "1", "3", "3");
+    var respuestas = new Array("", "1985", "Brendan Eich", "fatal", "2", "2", "","todas",  "1", "3", "3");
 
     console.log(respuestas);
     var correcto = true;
     var contadorFallos = 0;
+    var contadorIntentos = 0;
 
     var form = document.getElementById("form");
+    var botonEnviar = document.getElementById("botonEnviar");
     var contador = document.getElementById("contador");
 
     var tiempoInicio = new Date().getTime();
@@ -42,27 +44,92 @@ Realiza una una página web que presente un test de preguntas sobre el lenguaje 
             seconds = "0"  + seconds;
         }
 
-        contador.textContent = "Contador: " + minutes + ":" + seconds;
+        contador.innerHTML = "Contador: " + minutes + ":" + seconds + 
+                               "<br>Número de intentos: " + contadorIntentos + 
+                               "<br>Errores: " + contadorFallos;
 
     }, 1000);
     
 
     form.addEventListener("submit", function(event) {
+        
+        contadorFallos = 0;
         event.preventDefault();
 
         for (let i = 1; i < respuestas.length; i++) {
             var pregunta = document.getElementsByName("p" + i);
-            if(pregunta[0].value !== respuestas[i]) {
-                correcto = false;
-                console.log("la pregunta " + i + "está mal");
-                contadorFallos++;
-            }
+
+            switch(pregunta[0].type) {
             
-            // console.log(pregunta);
+                case "text" :
+
+                if(pregunta[0].value !== respuestas[i]) {
+                    correcto = false;
+                    console.log("la pregunta " + i + " está mal");
+                    contadorFallos++;
+                }
+
+                break;
+                
+                case "radio" :
+                
+                var respondida = false;
+
+                for (item of pregunta) {
+                    if (item.checked) {
+                        respondida = true;
+                        if(item.value !== respuestas[i]) {
+                            correcto = false;
+                            console.log("la pregunta " + i + " está mal");
+                            contadorFallos++;
+                        }
+                    }
+                }
+
+                if (!respondida) {
+                    correcto = false;
+                    console.log("la pregunta" + i + " no está respondida");
+                    contadorFallos++;
+                }
+
+                break;
+
+                default:
+                if (pregunta[0].tagName === "OPTION") {
+                    var respondida = false;
+
+                    for (item of pregunta) {
+                        if (item.selected) {
+                            respondida = true;
+                            if(item.value !== respuestas[i]) {
+                                correcto = false;
+                                console.log("la pregunta " + i + " está mal");
+                                contadorFallos++;
+                            }
+                        }
+                    }
+
+                    if (!respondida) {
+                        correcto = false;
+                        console.log("la pregunta" + i + " no está respondida");
+                        contadorFallos++;
+                    }
+                }
+
+                break;
+
+            }
         }
 
         alert("Errores: " + contadorFallos);
-        contadorFallos = 0;
+
+        if (contadorFallos === 0) {
+            clearInterval(x);
+            botonEnviar.disabled = true;
+        } else {
+            contadorIntentos++;
+            botonEnviar.value = "Reintentar";
+        }
     });
 
 })();

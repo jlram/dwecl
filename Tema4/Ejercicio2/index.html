@@ -11,7 +11,9 @@
 </head>
 <body>
 
-    <label class="contador" id="contador">Contador: 00:00</label>
+    <label class="contador" id="contador">Contador: 00:00 <br>
+                                          Número de intentos: 0 <br>
+                                          Errores: 0</label>
 
     <div class="container">
         <form action="" id="form">
@@ -49,11 +51,11 @@
             <div class="form-group">
                 <label for="sel1"><b>5.</b> Qué es más conveniente usar para 15 posibles opciones</label>
 
-                <select class="form-control" id="sel1">
-                    <option name="p5" value="1">Estructura if/else</option>
-                    <option name="p5" value="2">Switch </option>
-                    <option name="p5" value="3">Operador Ternario</option>
-                    <option name="p5" value="4">Depende del caso</option>
+                <select class="form-control" id="sel1" type="select">
+                    <option name="p5" value="1" type="option">Estructura if/else</option>
+                    <option name="p5" value="2" type="option">Switch </option>
+                    <option name="p5" value="3" type="option">Operador Ternario</option>
+                    <option name="p5" value="4" type="option">Depende del caso</option>
                 </select>
             </div>
 
@@ -138,7 +140,7 @@
                         </div>
                 </div>
 
-            <input type="submit" value="Enviar" class="btn" id="botonEnviar">
+            <input type="submit" value="Corrección" class="btn" id="botonEnviar">
             <input type="reset" value="Borrar campos" class="btn" id="botonReset">
             <br>
             <br>
