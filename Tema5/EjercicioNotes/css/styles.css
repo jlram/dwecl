@@ -1,0 +1,33 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    text-align: center;
+}
+
+#button {
+    bottom: 50%;
+}
+
+#buttonBorrar {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+.card {
+    height: 300px;
+    padding: 15px;
+    background-color: #fdfd96b4;
+    margin-bottom: 15px;
+    top: 15px;
+    left: 15px;
+}
+
+textarea {
+    resize: none;
+    height: 150px !important; 
+    background-color: #ffffffaf !important;
+}
