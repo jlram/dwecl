@@ -1,24 +1,33 @@
 $(function() {
 
-    $("form").submit(function(e){
+    $("#form").submit(function(e){
         e.preventDefault();
 
+        $( "#groupNombre .label" ).remove();
+        $( "#groupPass #label1" ).remove();
+        $( "#groupPass #label2" ).remove();
+        $( "#groupEmail .label" ).remove();
+        $( "#groupTel .label" ).remove();
+
         if(!isValidName()) {
-            $("input:text").attr("placeholder", "Introduce tu nombre. Este campo no puede estar vacío.");
+            $("#groupNombre").append('<span class="label label-important" style="color:red;">Introduce un nombre válido</span>');
         }
 
         if(!isSecurePassword()) {
-            $("input:password").val("").attr("placeholder", "Introduce tu contraseña. Debe contener al menos 8 caracteres.");
+            $("#groupPass").prepend('<span class="label label-important" id="label1" style="color:red;">Introduce una contraseña válida</span>');
         }
 
+        if(!isSamePassword()) {
+            $("#groupPass").append('<span class="label label-important" id="label2" style="color:red;">Las contraseñas no coinciden</span>');
+        } 
+
         if(!isValidEmail()) {
-            $("#inputEmail").attr("placeholder", "Introduce tu email. Debe tener un formato válido.");
+            $("#groupEmail").append('<span class="label label-important" style="color:red;">Introduce un email válido nombre@email.com</span>');
         }
 
         if(!isValidTelephone()) {
-            $("#inputTel").attr("placeholder", "Introduce tu teléfono. Debe ser de 9 dígitos.");
+            $("#groupTel").append('<span class="label label-important" style="color:red;">Introduce un teléfono válido (9 dígitos)/span>');
         }
-
     });
 
     function isValidName() {
@@ -27,6 +36,10 @@ $(function() {
 
     function isSecurePassword() {
         return $('input:password').val().length < 8 ? false : true;
+    }
+
+    function isSamePassword() {
+        return $('#inputPass').val() == $('#inputPass2').val() &&  $('#inputPass').val().length !== 0 ? true : false;
     }
     
     function isValidEmail() {
@@ -37,5 +50,4 @@ $(function() {
     function isValidTelephone() {
         return $("#inputTel").val.length != 9 ? false : true;
     }
-
 });
