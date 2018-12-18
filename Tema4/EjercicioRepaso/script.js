@@ -31,8 +31,6 @@ En c9 https://preview.c9users.io/apsierra/nuevo-ejmplosfaciles/ejercicioViajes.h
             e.target.classList.add("hidden");
         });
     }
-
-
     
     nochesFrancia.addEventListener("change", function(e) {
         let valorNoche = nochesFrancia.parentElement.getAttribute("data-precio-dia");
@@ -65,6 +63,4 @@ En c9 https://preview.c9users.io/apsierra/nuevo-ejmplosfaciles/ejercicioViajes.h
         e.preventDefault();
         fotos.classList.toggle("hidden");
     });
-    
-
 })();

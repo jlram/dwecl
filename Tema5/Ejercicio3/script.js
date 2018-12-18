@@ -1,5 +1,5 @@
 /**
- * Ejercicio2:
+ * Ejercicio3:
  * Definir  la  estructura  de  un  objeto  que  almacena  una  factura.
  * Las  facturas  están  formadas  por  la  información  de  la  propia  empresa  
  * (nombre  de  la  empresa,  dirección,  teléfono,  NIF),  la  información  del  cliente  
