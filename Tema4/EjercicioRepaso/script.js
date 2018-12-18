@@ -13,4 +13,58 @@ En c9 https://preview.c9users.io/apsierra/nuevo-ejmplosfaciles/ejercicioViajes.h
      desaparecerá dicho botón y aparecerá en su lugar el mensaje:
       “Llame al 902 30 30 30 para reservar este viaje”.
 */
+(function() {
 
+    var fotos = document.getElementsByClassName("fotos")[0];
+
+    var verMas = document.getElementsByClassName("ver-fotos")[0];
+    
+    var buttonsReserva = document.getElementsByClassName("book");
+
+    var nochesFrancia = document.getElementById("noches-francia");
+    var nochesUSA = document.getElementById("noches-usa");
+    var nochesTokio = document.getElementById("noches-tokio");
+    
+    for (let item of buttonsReserva) {
+        item.addEventListener("click", function(e){
+            e.target.parentElement.append("LLame al 902 30 30 30 para reservar este viaje");
+            e.target.classList.add("hidden");
+        });
+    }
+
+
+    
+    nochesFrancia.addEventListener("change", function(e) {
+        let valorNoche = nochesFrancia.parentElement.getAttribute("data-precio-dia");
+        
+        nochesFrancia.parentElement.getElementsByClassName("total")[0].textContent 
+                                                = valorNoche * nochesFrancia.value;
+
+        nochesFrancia.parentElement.getElementsByClassName("numero-noches")[0].textContent = nochesFrancia.value;
+    });
+
+    nochesUSA.addEventListener("change", function(e) {
+        let valorNoche = nochesUSA.parentElement.getAttribute("data-precio-dia");
+        
+        nochesUSA.parentElement.getElementsByClassName("total")[0].textContent 
+                                                = valorNoche * nochesUSA.value;
+
+        nochesUSA.parentElement.getElementsByClassName("numero-noches")[0].textContent = nochesUSA.value;
+    });
+
+    nochesTokio.addEventListener("change", function(e) {
+        let valorNoche = nochesTokio.parentElement.getAttribute("data-precio-dia");
+        
+        nochesTokio.parentElement.getElementsByClassName("total")[0].textContent 
+                                                = valorNoche * nochesTokio.value;
+
+        nochesTokio.parentElement.getElementsByClassName("numero-noches")[0].textContent = nochesTokio.value;
+    });
+
+    verMas.addEventListener("click", function(e) {
+        e.preventDefault();
+        fotos.classList.toggle("hidden");
+    });
+    
+
+})();
