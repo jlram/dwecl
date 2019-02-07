@@ -5,19 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mi Playlist</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <form action="">
-        <input type="text" id="cancion" size=40 placeholder="Inserta Cancion">
-        <input type="button" id="boton" value="Añadir Canción">
-    </form>
-    <ul id="listaCanciones">
+    <div class="container">
+        <form action="" class="mt-4">
+            <input type="text" class="form-control" id="cancion" size=40 placeholder="Inserta Cancion">
+            <input type="button" class="btn btn-secondary mt-1" id="boton" value="Añadir Canción">
+        </form>
+    
+        <ul id="listaCanciones" class="list-group m-4">
 
-    </ul>
+        </ul>
+    
 
-    <input type="text" placeholder="Busca una canción por nombre..." id="textoBusca">
-    <button id="botonBusca">Buscar canción</button> <button id="botonLimpia">Limpiar búsqueda</button>
+    <input type="text" class="form-control" placeholder="Busca una canción por nombre..." id="textoBusca">
+    
+    <button id="botonBusca" class="btn btn-secondary mt-1">Buscar canción</button>
+    
+    <button id="botonLimpia" class="btn btn-secondary mt-1">Limpiar búsqueda</button>
+</div>
 </body>
 </html>
